@@ -1,6 +1,8 @@
 package pl.wsei.pam
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,5 +19,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    fun onClickMainBtnRunLab01(v: View){
+        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    fun onClickMainBtnRunLab02(v: View){
+        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
     }
 }
