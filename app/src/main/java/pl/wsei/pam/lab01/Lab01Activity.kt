@@ -1,6 +1,9 @@
 package pl.wsei.pam.lab01
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.abs
+
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.LinearLayout
@@ -8,8 +11,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toolbar.LayoutParams
-import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.abs
+import pl.wsei.pam.R
 
 class Lab01Activity : AppCompatActivity() {
     lateinit var mLayout: LinearLayout
@@ -17,6 +19,7 @@ class Lab01Activity : AppCompatActivity() {
     lateinit var mProgress: ProgressBar
     var mBoxes: MutableList<CheckBox> = mutableListOf()
     var mButtons: MutableList<Button> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lab01)
