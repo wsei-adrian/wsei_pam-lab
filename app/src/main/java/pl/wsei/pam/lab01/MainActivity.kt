@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     // Wykonaj dzielenie niecałkowite parametru a przez b
     // Wynik zwróć po instrukcji return
     private fun task11(a: Int, b: Int): Double {
-        return 0.0
+        return a.toDouble() / b
     }
 
     // Zdefiniuj funkcję, która zwraca łańcuch dla argumentów bez znaku (zawsze dodatnie) wg schematu
@@ -103,12 +103,12 @@ class MainActivity : AppCompatActivity() {
     // np. dla parametrów a = 2 i b = 3
     // 2 + 3 = 5
     private fun task12(a: UInt, b: UInt): String {
-        return ""
+        return "$a + $b = ${a + b}"
     }
 
     // Zdefiniu funkcję, która zwraca wartość logiczną, jeśli parametr `a` jest nieujemny i mniejszy od `b`
     fun task13(a: Double, b: Float): Boolean {
-        return false
+        return a >= 0 && a < b
     }
 
     // Zdefiniuj funkcję, która zwraca łańcuch dla argumentów całkowitych ze znakiem wg schematu
