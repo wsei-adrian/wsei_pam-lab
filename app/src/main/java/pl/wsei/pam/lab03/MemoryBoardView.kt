@@ -28,6 +28,7 @@ class MemoryBoardView(
         R.drawable.baseline_school_24,
         R.drawable.baseline_phone_24,
         R.drawable.baseline_email_24,
+        R.drawable.baseline_map_24,
         R.drawable.baseline_alarm_24,
         R.drawable.baseline_shopping_cart_24,
         R.drawable.baseline_sports_soccer_24,
