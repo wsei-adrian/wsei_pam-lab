@@ -1,5 +1,6 @@
 package pl.wsei.pam.lab02
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import pl.wsei.pam.R
+import pl.wsei.pam.lab03.Lab03Activity
 
 class Lab02Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,15 @@ class Lab02Activity : AppCompatActivity() {
         val tokens: List<String>? = tag?.split(" ")
         val rows = tokens?.get(0)?.toInt()
         val columns = tokens?.get(1)?.toInt()
-        Toast.makeText(this, "rows: ${rows}, columns: ${columns}", Toast.LENGTH_SHORT).show()
+
+        if (rows == null || columns == null) {
+            Toast.makeText(this, "Niepoprawny rozmiar planszy", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val intent = Intent(this, Lab03Activity::class.java)
+        intent.putExtra(Lab03Activity.EXTRA_ROWS, rows)
+        intent.putExtra(Lab03Activity.EXTRA_COLUMNS, columns)
+        startActivity(intent)
     }
 }
