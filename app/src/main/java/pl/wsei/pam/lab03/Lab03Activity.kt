@@ -6,6 +6,9 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.animation.DecelerateInterpolator
 import android.widget.GridLayout
 import android.widget.ImageButton
@@ -116,6 +119,33 @@ class Lab03Activity : AppCompatActivity() {
         if (::mBoardModel.isInitialized) {
             outState.putIntArray(STATE_BOARD, mBoardModel.getState())
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.board_activity_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.board_activity_sound -> {
+                if (item.icon?.constantState == resources.getDrawable(
+                        R.drawable.baseline_volume_up_24,
+                        theme
+                    ).constantState
+                ) {
+                    Toast.makeText(this, "Sound turn off", Toast.LENGTH_SHORT).show()
+                    item.setIcon(R.drawable.baseline_volume_off_24)
+                    isSound = false
+                } else {
+                    Toast.makeText(this, "Sound turn on", Toast.LENGTH_SHORT).show()
+                    item.setIcon(R.drawable.baseline_volume_up_24)
+                    isSound = true
+                }
+            }
+        }
+        return false
     }
 
     private fun animatePairedTiles(tiles: List<Tile>, action: Runnable) {
